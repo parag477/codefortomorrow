@@ -38,7 +38,6 @@ Authentication-System/
 ### Clone the Repository
 ```bash
 git clone git@github.com:parag477/codefortomorrow.git
-cd Authentication-System
 ```
 
 ### Backend Setup
@@ -73,8 +72,7 @@ cd Authentication-System
     ```bash
     npm install
     ```
-3. Update the `src/config.js` file (or equivalent) with your backend URL.
-4. Start the React development server:
+3. Start the React development server:
     ```bash
     npm start
     ```
@@ -91,8 +89,8 @@ cd Authentication-System
 - **Request Body**:
   ```json
   {
-    "firstName": "John",
-    "lastName": "Doe",
+    "first": "John",
+    "last": "Doe",
     "email": "johndoe@example.com",
     "password": "password123"
   }
@@ -129,7 +127,6 @@ cd Authentication-System
 ### Frontend
 - React
 - Axios (for API calls)
-- Bootstrap/Material-UI (optional, for styling)
 
 ### Backend
 - Node.js
@@ -138,14 +135,6 @@ cd Authentication-System
 - bcrypt (for password hashing)
 - JSON Web Tokens (JWT)
 
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch-name`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature-branch-name`).
-5. Open a pull request.
 
 ## License
 

@@ -25,19 +25,19 @@ Authentication-System/
 ### Backend
 - Built with Node.js and Express.
 - Provides RESTful APIs for user authentication.
-- Uses secure password hashing (e.g., bcrypt).
+- Uses MySQL as the database.
 
 ## Prerequisites
 
 - Node.js (v16 or later)
 - npm or yarn
-- MongoDB (if using a database for authentication)
+- MySQL server
 
 ## Setup
 
 ### Clone the Repository
 ```bash
-git clone <repository-url>
+git clone git@github.com:parag477/codefortomorrow.git
 cd Authentication-System
 ```
 
@@ -53,7 +53,10 @@ cd Authentication-System
 3. Create a `.env` file for environment variables:
     ```
     PORT=5000
-    MONGO_URI=<your_mongodb_connection_string>
+    DB_HOST=<your_database_host>
+    DB_USER=<your_database_user>
+    DB_PASSWORD=<your_database_password>
+    DB_NAME=<your_database_name>
     JWT_SECRET=<your_jwt_secret>
     ```
 4. Start the backend server:
@@ -84,18 +87,19 @@ cd Authentication-System
 ## API Endpoints
 
 ### User Registration
-- **Endpoint**: `POST /api/auth/register`
+- **Endpoint**: `POST /signup`
 - **Request Body**:
   ```json
   {
-    "name": "John Doe",
+    "firstName": "John",
+    "lastName": "Doe",
     "email": "johndoe@example.com",
     "password": "password123"
   }
   ```
 
 ### User Login
-- **Endpoint**: `POST /api/auth/login`
+- **Endpoint**: `POST /login`
 - **Request Body**:
   ```json
   {
@@ -105,10 +109,19 @@ cd Authentication-System
   ```
 
 ### Get User Info
-- **Endpoint**: `GET /api/auth/me`
+- **Endpoint**: `GET /user`
 - **Headers**:
   ```
   Authorization: Bearer <your_token>
+  ```
+
+### Forget Password
+- **Endpoint**: `POST /forget-password`
+- **Request Body**:
+  ```json
+  {
+    "email": "johndoe@example.com"
+  }
   ```
 
 ## Technologies Used
@@ -121,7 +134,7 @@ cd Authentication-System
 ### Backend
 - Node.js
 - Express.js
-- MongoDB (Mongoose)
+- MySQL (using Sequelize ORM)
 - bcrypt (for password hashing)
 - JSON Web Tokens (JWT)
 
@@ -141,6 +154,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Contact
 
 For any issues or suggestions, feel free to contact:
-- **Email**: your-email@example.com
-- **GitHub**: [your-github-profile-url]
+- **GitHub**: https://github.com/parag477
 
